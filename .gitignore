@@ -1,0 +1,8 @@
+.idea/
+out/
+target/
+*.iml
+src/META-INF/
+log/
+input/
+output/
