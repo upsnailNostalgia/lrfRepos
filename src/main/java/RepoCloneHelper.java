@@ -207,6 +207,18 @@ public class RepoCloneHelper {
         bufferedWriter.close();
     }
 
+    public static void findDuplicated() throws IOException {
+        File file = new File("G:\\lrfRepos\\output\\result.txt");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String str = "";
+        Set<String> set = new HashSet<String>();
+        while (null!=(str=bufferedReader.readLine())) {
+            set.add(str.split(" ")[0]);
+        }
+        bufferedReader.close();
+        System.out.println(set.size());
+    }
+
 
     public static void main(String[] args) throws InterruptedException, SQLException, ParseException, IOException {
 //        String str_sql = "select id,git_address from repository_java where stars_count>=25";
@@ -214,8 +226,9 @@ public class RepoCloneHelper {
         //cloneRepoByMap(hashMap,"G:\\testGit4");
 //        cloneRepoByMap(hashMap,"H:\\Repos");
 
-        getStars("G:\\lrfRepos\\input\\prjects_3000.txt");
-//        deleteDuplicated();
+//        getStars("G:\\lrfRepos\\input\\prjects_3000.txt");
+        deleteDuplicated();
+//        findDuplicated();
 
     }
 }
