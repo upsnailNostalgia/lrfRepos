@@ -221,13 +221,12 @@ public class RepoCloneHelper {
 
 
     public static void main(String[] args) throws InterruptedException, SQLException, ParseException, IOException {
-//        String str_sql = "select id,git_address from repository_java where stars_count>=25";
-//        HashMap<Integer,String> hashMap = getURLFromMysql(str_sql);
-        //cloneRepoByMap(hashMap,"G:\\testGit4");
-//        cloneRepoByMap(hashMap,"H:\\Repos");
+        String str_sql = "select id,git_address from repository_java where stars_count>=20 and pushed_at>'2019-07-01'";
+        HashMap<Integer,String> hashMap = getURLFromMysql(str_sql);
+        cloneRepoByMap(hashMap,"/home/fdse/data/wjwRepos/repos");
 
 //        getStars("G:\\lrfRepos\\input\\prjects_3000.txt");
-        deleteDuplicated();
+//        deleteDuplicated();
 //        findDuplicated();
 
     }
